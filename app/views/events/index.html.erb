@@ -1,0 +1,30 @@
+<table class="table">
+
+  <h1> Events
+    <%= link_to 'Create Event', new_event_path, class: "btn btn-primary pull-right" %>
+  </h1>
+
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Location</th>
+        <th>Description</th>
+        <th>Capacity</th>
+        <th>Requires ID</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @events.each do |event| %>
+        <tr>
+          <td><%= event.date %></td>
+          <td><%= event.location %></td>
+          <td><%= event.description %></td>
+          <td><%= event.capacity %></td>
+          <td><% if event.requires_id %>
+                True
+              <% else %>
+                False
+              <% end %></td>
+      <% end %>
+    </tbody>
