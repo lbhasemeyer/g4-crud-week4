@@ -6,9 +6,9 @@
 
     <thead>
       <tr>
+        <th>Description</th>
         <th>Date</th>
         <th>Location</th>
-        <th>Description</th>
         <th>Capacity</th>
         <th>Requires ID</th>
       </tr>
@@ -17,14 +17,15 @@
     <tbody>
       <% @events.each do |event| %>
         <tr>
+          <td><%= link_to event.description, event_path(event) %></td>
           <td><%= event.date %></td>
           <td><%= event.location %></td>
-          <td><%= event.description %></td>
           <td><%= event.capacity %></td>
           <td><% if event.requires_id %>
                 True
               <% else %>
                 False
               <% end %></td>
+          <td><%= link_to 'Edit', edit_event_path(event) %></td>
       <% end %>
     </tbody>

@@ -1,0 +1,23 @@
+
+<%= form_for(@event) do |t| %>
+
+    Date
+    <%= t.date_field :date %>
+
+    Location
+    <%= t.text_field :location %>
+
+    Description
+    <%= t.text_field :description %>
+
+    Capacity
+    <%= t.number_field :capacity %>
+
+    Requires ID?
+    <%= t.text_field :requires_id %>
+
+    <div class="form-group">
+      <%= t.submit 'Update Event', class: "btn btn-primary"%>
+    </div>
+
+<% end %>
